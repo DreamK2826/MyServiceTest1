@@ -1,5 +1,6 @@
 package com.dreamk.myservicetest1;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.gsls.gt.GT;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +35,24 @@ public class MainActivity extends AppCompatActivity {
         setListener();
     }
 
+    void test1(){
+        ProgressDialog progressDialog = GT.ProgressDialogUtils.initProgressBarDialog(this, false, R.mipmap.ic_launcher, "标题", "内容", 250, null);
+        progressDialog.show();//显示
+        new Thread(() -> {
+            while (true){
+                if(progressDialog.getProgress() >= progressDialog.getMax()){
+                    progressDialog.dismiss();//取消
+                    break;
+                }
+                progressDialog.setProgress(progressDialog.getProgress() + 1);
+                GT.Thread.sleep(20);
+            }
+
+        }).start();
+
+    }
+
+
     private void setListener(){
         btn1.setOnClickListener(v -> {
             ToastUtil.show(this,"btn1");
@@ -43,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
         btn3.setOnClickListener(v -> {
             ToastUtil.show(this,"btn3");
+            test1();
 
         });
         btn4.setOnClickListener(v -> {
