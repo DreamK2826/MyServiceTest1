@@ -40,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
             stopService(new Intent(getBaseContext(),MyService.class));
         });
         btn3.setOnClickListener(v -> {
+            ToastUtil.show(this,"btn3");
 
         });
         btn4.setOnClickListener(v -> {
-
+            ToastUtil.show(this,"btn4");
         });
     }
 }
