@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListener(){
         btn1.setOnClickListener(v -> {
+            ToastUtil.show(this,"btn1");
             startService(new Intent(getBaseContext(),MyService.class));
         });
         btn2.setOnClickListener(v -> {
+            ToastUtil.show(this,"btn2");
             stopService(new Intent(getBaseContext(),MyService.class));
         });
         btn3.setOnClickListener(v -> {

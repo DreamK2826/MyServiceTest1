@@ -6,9 +6,9 @@ pluginManagement {
                 maven {
                     allowInsecureProtocol = true
                     url 'https://mirrors.cloud.tencent.com/gradle/'}
-                maven {
-                    allowInsecureProtocol = true
-                    url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+//                maven {
+//                    allowInsecureProtocol = true
+//                    url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
                 maven {
                     allowInsecureProtocol = true
                     url 'https://maven.aliyun.com/repository/gradle-plugin' }
@@ -42,9 +42,9 @@ dependencyResolutionManagement {
         maven {
             allowInsecureProtocol = true
             url 'https://mirrors.cloud.tencent.com/gradle/'}
-        maven {
-            allowInsecureProtocol = true
-            url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
         maven {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/gradle-plugin' }
