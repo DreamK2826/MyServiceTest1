@@ -1,0 +1,70 @@
+pluginManagement {
+    repositories {
+
+        google {
+            content { // 腾讯云/阿里云 maven 镜像聚合了：central、jcenter、google、gradle-plugin
+                maven {
+                    allowInsecureProtocol = true
+                    url 'https://mirrors.cloud.tencent.com/gradle/'}
+                maven {
+                    allowInsecureProtocol = true
+                    url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+                maven {
+                    allowInsecureProtocol = true
+                    url 'https://maven.aliyun.com/repository/gradle-plugin' }
+                maven {
+                    allowInsecureProtocol = true
+                    url 'http://maven.aliyun.com/nexus/content/groups/public' }
+                maven {
+                    allowInsecureProtocol = true
+                    url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+                maven {
+                    allowInsecureProtocol = true
+                    url 'https://maven.aliyun.com/repository/jcenter' }
+                maven {
+                    allowInsecureProtocol = true
+                    url 'https://maven.aliyun.com/repository/google' }
+                maven { url 'https://jitpack.io' }
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // 腾讯云/阿里云 maven 镜像聚合了：central、jcenter、google、gradle-plugin
+
+        maven {
+            allowInsecureProtocol = true
+            url 'https://mirrors.cloud.tencent.com/gradle/'}
+        maven {
+            allowInsecureProtocol = true
+            url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+        maven {
+            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven {
+            allowInsecureProtocol = true
+            url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven {
+            allowInsecureProtocol = true
+            url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven {
+            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/repository/jcenter' }
+        maven {
+            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "MyServiceTest1"
+include ':app'
